@@ -32,7 +32,7 @@ class FakeSession:
 
 def client(responses):
     waits = []
-    return HttpClient(session=FakeSession(responses), sleep=waits.append), waits
+    return HttpClient(session=FakeSession(responses), sleep=waits.append, rand=lambda: 0.0), waits
 
 
 def test_redact_hides_key_and_email():
@@ -76,7 +76,10 @@ def test_gives_up_after_max_tries():
 
 def test_backoff_is_capped():
     http = HttpClient(
-        session=FakeSession([FakeResponse(429)] * 9), max_tries=9, sleep=lambda s: None
+        session=FakeSession([FakeResponse(429)] * 9),
+        max_tries=9,
+        sleep=lambda s: None,
+        rand=lambda: 0.0,
     )
     assert http._wait_time(FakeResponse(429), 8) == 60.0
 
@@ -86,3 +89,80 @@ def test_other_4xx_raises_instead_of_returning_none():
     with pytest.raises(ApiError, match="400"):
         http.get_json("https://api.example.org/x")
     assert waits == []
+
+
+def test_retry_wait_is_logged_with_key_redacted(caplog):
+    http, _ = client([FakeResponse(429, headers={"Retry-After": "3"}), FakeResponse(200, {})])
+    http.get_json("https://api.example.org/x")
+    warnings = [r.getMessage() for r in caplog.records if r.levelname == "WARNING"]
+    assert len(warnings) == 1 and "429" in warnings[0] and "3s" in warnings[0]
+    assert "SECRET" not in caplog.text
+
+
+def budgeted(responses, budget):
+    waits = []
+    http = HttpClient(
+        session=FakeSession(responses),
+        max_tries=2,
+        sleep=waits.append,
+        rate_limit_budget=budget,
+        rand=lambda: 0.0,
+    )
+    return http, waits
+
+
+def test_429_streak_retries_past_max_tries_within_budget():
+    http, waits = budgeted([FakeResponse(429)] * 4 + [FakeResponse(200, {"ok": 1})], budget=100)
+    assert http.get_json("https://api.example.org/x") == {"ok": 1}
+    assert waits == [1.0, 2.0, 4.0, 8.0]
+
+
+def test_429_streak_gives_up_once_budget_spent():
+    http, waits = budgeted([FakeResponse(429)] * 10, budget=7)
+    with pytest.raises(RetriesExhausted, match="after 3 tries"):
+        http.get_json("https://api.example.org/x")
+    assert waits == [1.0, 2.0, 4.0]
+
+
+def test_budget_does_not_extend_server_errors():
+    http, waits = budgeted([FakeResponse(503)] * 10, budget=100)
+    with pytest.raises(RetriesExhausted):
+        http.get_json("https://api.example.org/x")
+    assert waits == [1.0, 2.0]
+
+
+def test_backoff_jitter_adds_up_to_half():
+    http = HttpClient(session=FakeSession([]), rand=lambda: 1.0)
+    assert http._wait_time(FakeResponse(429), 3) == 12.0
+    assert http._wait_time(FakeResponse(429, headers={"Retry-After": "3"}), 3) == 3.0
+
+
+def throttled(responses, rand=0.0):
+    waits = []
+    http = HttpClient(
+        session=FakeSession(responses),
+        sleep=waits.append,
+        throttle_wait=5.0,
+        rand=lambda: rand,
+    )
+    return http, waits
+
+
+def test_throttle_wait_replaces_backoff_on_429():
+    http, waits = throttled([FakeResponse(429)] * 4 + [FakeResponse(200, {"ok": 1})], rand=0.5)
+    assert http.get_json("https://api.example.org/x") == {"ok": 1}
+    assert waits == [5.5] * 4
+
+
+def test_throttle_wait_still_honours_retry_after():
+    http, waits = throttled(
+        [FakeResponse(429, headers={"Retry-After": "2"}), FakeResponse(200, {})]
+    )
+    http.get_json("https://api.example.org/x")
+    assert waits == [2.0]
+
+
+def test_throttle_wait_leaves_server_errors_on_backoff():
+    http, waits = throttled([FakeResponse(503)] * 3 + [FakeResponse(200, {})])
+    http.get_json("https://api.example.org/x")
+    assert waits == [1.0, 2.0, 4.0]

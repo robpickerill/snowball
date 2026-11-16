@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 from collections import Counter
 from collections.abc import Iterable
 from dataclasses import dataclass, field
@@ -25,6 +26,7 @@ from .text import natural_key
 
 S2_FALLBACK, S2_ALL, S2_OFF = "fallback", "all", "off"
 DEFAULT_WINDOW = DateWindow(2018, "2026-08-31")
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -86,9 +88,11 @@ class Snowballer:
         reports: list[SeedReport] = []
         seed_works: list[Work] = []
 
-        for seed in seeds:
+        seeds = list(seeds)
+        for i, seed in enumerate(seeds, 1):
             report = self._snowball_seed(seed, pool, raw)
             reports.append(report)
+            logger.info("seed %d/%d (%s): %s", i, len(seeds), seed.id, report.links or "no links")
             seed_works += [m.work for m in (report.openalex, report.s2) if m and m.found]
 
         dropped = pool.discard_matching(seed_works)  # seeds citing each other are not candidates
@@ -152,6 +156,7 @@ class Snowballer:
             if report.s2 is None:
                 report.s2 = Match(None, "FAILED")
             report.notes.append("semantic scholar failed (rate limited), rerun with S2_API_KEY")
+            logger.warning("seed %s: Semantic Scholar gave up (rate limited)", seed.id)
 
     @staticmethod
     def _link(
@@ -171,6 +176,7 @@ class Snowballer:
     def _fill_from_openalex(self, pool: CandidatePool) -> None:
         """Crossref and Semantic Scholar hits often lack abstracts: fetch OpenAlex records by DOI."""
         dois = [c.work.doi for c in pool if c.work.doi and "openalex" not in c.work.ids]
+        logger.info("fetching %d records from OpenAlex by DOI", len(dois))
         for work in self.openalex.works_by_dois(dois):
             pool.update(work)
 

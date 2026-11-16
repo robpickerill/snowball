@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import logging
 import os
 import sys
 from pathlib import Path
@@ -53,12 +54,16 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="seconds between Semantic Scholar calls (default 1 with a key, 3 without)",
     )
+    p.add_argument("-v", "--verbose", action="store_true", help="log every request to stderr")
     p.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     return p
 
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    logging.basicConfig(format="%(asctime)s %(levelname)s %(message)s", datefmt="%H:%M:%S")
+    # Not root: urllib3's debug lines print unredacted URLs.
+    logging.getLogger("slr_snowball").setLevel(logging.DEBUG if args.verbose else logging.INFO)
     openalex_key = os.environ.get("OPENALEX_API_KEY", "")
     if not openalex_key:
         print("Set OPENALEX_API_KEY (free key from openalex.org).", file=sys.stderr)
@@ -74,7 +79,9 @@ def main(argv: list[str] | None = None) -> int:
     log: list[str] = []
     http = HttpClient(pause=args.pause, log=log)
     s2_pause = args.s2_pause if args.s2_pause is not None else (1.0 if s2_key else 3.0)
-    s2_http = HttpClient(pause=s2_pause, max_tries=8, log=log)
+    s2_http = HttpClient(
+        pause=s2_pause, max_tries=8, log=log, rate_limit_budget=900, throttle_wait=5.0
+    )
 
     snowballer = Snowballer(
         openalex=OpenAlexSource(http, openalex_key, args.title_threshold),

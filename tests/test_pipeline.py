@@ -98,3 +98,19 @@ def test_rate_limited_semantic_scholar_is_reported_not_hidden(openalex, s2):
     report = result.reports[2]
     assert report.s2.method == "FAILED" and "rate limited" in report.notes[0]
     assert result.counts()["seeds_with_failed_lookups"] == ["3"]
+
+
+def test_progress_is_logged_per_seed(openalex, caplog):
+    caplog.set_level("INFO")
+    Snowballer(openalex, s2_mode="off").run(SEEDS[:2])
+    progress = [r.getMessage() for r in caplog.records if r.getMessage().startswith("seed ")]
+    assert [p.split(":")[0] for p in progress] == ["seed 1/2 (1)", "seed 2/2 (2)"]
+
+
+def test_rate_limited_semantic_scholar_is_logged(openalex, s2, caplog):
+    def refuse(seed):
+        raise RetriesExhausted("429")
+
+    s2.find = refuse
+    Snowballer(openalex, semantic_scholar=s2).run(SEEDS)
+    assert any(r.levelname == "WARNING" and "seed 3" in r.getMessage() for r in caplog.records)
