@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+dist/
+*.egg-info/
+.direnv/
+result
+.env
+# output from local runs (commit a run on purpose by moving it into data/)
+snowball_out/

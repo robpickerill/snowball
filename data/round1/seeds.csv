@@ -1,0 +1,38 @@
+id,title,year,doi,s2_id
+2,Vicious Cycles in Distributed Software Systems,2023,10.1109/ASE56229.2023.00032,
+4,Approaches for Resilience against Cascading Failures in Cloud Datacenters,2018,10.1109/ICDCS.2018.00074,
+6,Self-Adaptive Circuit Breaker Open-State Interval for Enhancing Resiliency of Microservices,2024,10.1109/OCIT65031.2024.00136,
+7,MSF-Model: Queuing-Based Analysis and Prediction of Metastable Failures in Replicated Storage Systems,2024,10.1109/SRDS64841.2024.00013,
+9,Service-Level Objective-Aware Load-Adaptive Timeout: Balancing Failure Rate and Latency in Microservices Communication,2025,10.1109/ACCESS.2025.3596118,
+11,FloodGuard: A Prediction-Control Closed Loop for Mitigating Cold-Start Floods in Cloud Services,2026,10.1109/2575-8411.2026.00123,
+12,Dependability Evaluation of Middleware Technology for Large-scale Distributed Caching,2020,10.1109/ISSRE5003.2020.00029,
+13,CSnake: Detecting Self-Sustaining Cascading Failure via Causal Stitching of Fault Propagations,2026,10.1145/3767295.3769373,
+17,XFaaS: Hyperscale and Low Cost Serverless Functions at Meta,2023,10.1145/3600006.3613155,
+18,TopFull: An Adaptive Top-Down Overload Control for SLO-Oriented Microservices,2024,10.1145/3651890.3672253,
+19,SafeLoad: Efficient Admission Control Framework for Identifying Memory-Overloading Queries in Cloud Data Warehouses,2025,10.14778/3785297.3785311,
+22,Dynamically Balancing Load with Overload Control for Microservices,2024,10.1145/3676167,
+23,Overload Control for Scaling WeChat Microservices (DAGOR),2018,10.1145/3267809.3267823,
+25,"Understanding E-Commerce Systems under Massive Flash Crowd: Measurement, Analysis, and Implications",2020,10.1109/TSC.2017.2767600,
+27,Friend or Foe: Strong Consistency vs. Overload in High-Availability Distributed Systems and SDN,2018,10.1109/ISSREW.2018.00-30,
+30,Auto-scaling of Web Applications in Clouds: A Tail Latency Evaluation,2020,10.1109/UCC48980.2020.00037,
+32,CascadeGuard: Topology-Aware Predictive Modeling for Preventing Cascading Failures in Distributed Search Systems,2026,10.1109/ICARAI70085.2026.11635122,
+33,Designing a Multi-Layered Rate Limiting Framework for Resilient Cloud-Native Systems,2025,10.1109/ICSTSN67075.2025.11397959,
+34,Structure-Aware Reinforcement Learning for Node-Overload Protection in Mobile Edge Computing,2022,10.1109/TCCN.2022.3195503,
+35,Modeling the Interactions between Core Allocation and Overload Control in us-Scale Network Stacks,2025,10.1109/MASCOTS67699.2025.11283398,bd033a07a7efe01801351c9f983856da73bb25d6
+36,StreamRAG: A Lock-Aware and Traffic-Aware Query Coordinator in Stream-Based RAG Systems,2025,10.1109/CCGRID64434.2025.00065,
+40,Model-Switching: Dealing with Fluctuating Workloads in Machine-Learning-as-a-Service Systems,2020,,
+41,Overload Control for Virtual Network Functions under CPU Contention,2019,10.1016/j.future.2019.04.007,
+43,Rajomon: Decentralized and Coordinated Overload Control for Latency-Sensitive Microservices,2025,,0057e9bc7762bf8b8ed6a70e090ab3b7abd81833
+44,Defcon: Preventing Overload with Graceful Feature Degradation,2023,,465cc2ebbbe9747eb43e2455fb3c8cd11367bffb
+45,Mitigation of Flash Crowd in Web Services by Providing Feedback Information to Users,2021,10.1587/transinf.2020MPP0003,
+47,Mitigating Metastable Failures in Distributed Systems with Offline Reinforcement Learning,2023,,a6e6b5dfa8292be96a1bb8f8f602748eb04711b9
+49,Dynamic Tuning and Overload Management of Thread Pool System,2018,10.14569/ijacsa.2018.091162,
+51,"Trigger, Not Root Cause: Re-Examining GitHub's 2024 to 2026 Availability Decline Under Artificial Intelligence-Driven Load",2026,10.3390/fi18070377,
+54,Protego: Overload Control for Applications with Unpredictable Lock Contention,2023,,f10c751b3ccffd4f6e0ce2fdba6b551b12a56680
+55,Metastable Failures in the Wild,2022,,1cb0c82b180c895b052502debabc61db581a5cd9
+56,Elastic Overload Control Method for Microservice-Based Cloud Servers under Traffic Surges,2025,10.1117/12.3091144,0daa3947f34be9f958459228469db4ba7a957455
+57,Overload Control for us-scale RPCs with Breakwater,2020,,2b74469f0bedfe0e9fbb241af8fbfdbeacfa8bce
+58,Modeling Metastability,2025,10.1145/3772356.3772426,
+59,VNF-DOC: A Dynamic Overload Controller for Virtualized Network Functions in Cloud,2020,10.1007/978-3-030-44041-1_57,
+60,Scalable Overload Prediction in Cloud Computing using a Hybrid Queuing-Theoretic and Machine Learning Framework,2025,10.1007/s00607-025-01586-w,
+61,KUNSERVE: Parameter-Centric Memory Management for Efficient Memory Overloading Handling in LLM Serving,2026,10.1145/3767295.3769348,

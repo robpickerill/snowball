@@ -1,0 +1,176 @@
+source,ref,title,doi
+rayyan_pool,38,Load Balancing Synchronized Brownout Oriented Approach for Safeguarding Cloud Services Sustainability,10.1007/978-981-16-6309-3_53
+rayyan_pool,42,A Cascading-Failure-Aware Distributed Computing System with Performance Sharing: Reliability and Robustness Analysis,10.1007/978-981-97-3180-0_28
+rayyan_pool,48,Cloud-based scalable resiliency pattern using PRISM,10.1504/ijcc.2024.140490
+rayyan_pool,56,Elastic overload control method for microservice-based cloud servers under traffic surges,10.1117/12.3091144
+rayyan_pool,15,Metastability in the Metaverse - Proceedings of the 17th ACM International Conference on Distributed and Event-Based Systems,10.1145/3583678.3603440
+rayyan_pool,53,Auto retry circuit breaker for enhanced performance in microservice applications,10.11591/ijece.v14i2.pp2274-2281
+rayyan_pool,59,VNF-DOC: A Dynamic Overload Controller for Virtualized Network Functions in Cloud,10.1007/978-3-030-44041-1_57
+rayyan_pool,1,BSN-OCF: Businesses Sink Node-Oriented Cascading Failure Model in Microservice Applications,10.1109/cscwd64889.2025.11033336
+rayyan_pool,3,An Empirical Evaluation of Synchronous vs Asynchronous Microservice Architectures for Enterprise Messaging Platforms,10.1109/aide69088.2026.11545016
+rayyan_pool,4,Approaches for Resilience against Cascading Failures in Cloud Datacenters,10.1109/icdcs.2018.00074
+rayyan_pool,5,Vulnerability Assessment of Service Mesh-Based Microservices Having Workflow Dependencies,10.1109/discover66922.2025.11258913
+rayyan_pool,16,Hermes: Enhancing Layer-7 Cloud Load Balancers with Userspace-Directed I/O Event Notification - Proceedings of the ACM SIGCOMM 2025 Conference,10.1145/3718958.3750469
+rayyan_pool,19,SafeLoad: Efficient Admission Control Framework for Identifying Memory-Overloading Queries in Cloud Data Warehouses,10.14778/3785297.3785311
+rayyan_pool,20,From the decorator pattern to circuit breakers in microservices - Proceedings of the 33rd Annual ACM Symposium on Applied Computing,10.1145/3167132.3167427
+rayyan_pool,21,BurScale: Using Burstable Instances for Cost-Effective Autoscaling in the Public Cloud - Proceedings of the ACM Symposium on Cloud Computing,10.1145/3357223.3362706
+rayyan_pool,28,BLOC: Balancing Load with Overload Control In the Microservices Architecture,10.1109/acsos55765.2022.00027
+rayyan_pool,29,PhD Forum: Towards Metastable-Failure-Free Distributed Transaction Systems,10.1109/srds64841.2024.00038
+rayyan_pool,31,A Comprehensive Framework Integrating Universal Scalability Law to Enhance Cloud Resource Allocation,10.1109/icctwc68241.2026.11583264
+rayyan_pool,36,Streamrag: a Lock-Aware and Traffic-Aware Query Coordinator in Stream-Based Rag Systems,10.1109/ccgrid64434.2025.00065
+rayyan_pool,37,Adaptive Kubernetes autoscaling via data-driven prediction and modular stability filtering,10.1049/icp.2026.1976
+rayyan_pool,39,Performance modeling for cloud microservice applications,10.1145/3297663.3310309
+rayyan_pool,61,KUNSERVE: Parameter-centric Memory Management for Efficient Memory Overloading Handling in LLM Serving,10.1145/3767295.3769348
+rayyan_pool,62,Charon: A Framework for Microservice Overload Control,10.1145/3484266.3487378
+rayyan_pool,58,Modeling Metastability,10.1145/3772356.3772426
+rayyan_pool,2,Vicious Cycles in Distributed Software Systems,10.1109/ase56229.2023.00032
+rayyan_pool,6,Self-Adaptive Circuit Breaker Open-State Interval for Enhancing Resiliency of Microservices,10.1109/ocit65031.2024.00136
+rayyan_pool,7,MSF-Model: Queuing-Based Analysis and Prediction of Metastable Failures in Replicated Storage Systems,10.1109/srds64841.2024.00013
+rayyan_pool,8,Using Gossip Enabled Distributed Circuit Breaking for Improving Resiliency of Distributed Systems,10.1109/icsa53651.2022.00010
+rayyan_pool,9,Service-Level Objective-Aware Load-Adaptive Timeout: Balancing Failure Rate and Latency in Microservices Communication,10.1109/access.2025.3596118
+rayyan_pool,10,Topology-Aware Circuit Breaking on Critical Paths in Microservice Systems,10.23919/date69613.2026.11539340
+rayyan_pool,11,FloodGuard: A Prediction-Control Closed Loop for Mitigating Cold-Start Floods in Cloud Services,10.1109/2575-8411.2026.00123
+rayyan_pool,12,Dependability Evaluation of Middleware Technology for Large-scale Distributed Caching,10.1109/issre5003.2020.00029
+rayyan_pool,13,CSnake: Detecting Self-Sustaining Cascading Failure via Causal Stitching of Fault Propagations - Proceedings of the 21st European Conference on Computer Systems,10.1145/3767295.3769373
+rayyan_pool,14,Metastable failures in distributed systems - Proceedings of the Workshop on Hot Topics in Operating Systems,10.1145/3458336.3465286
+rayyan_pool,17,XFaaS: Hyperscale and Low Cost Serverless Functions at Meta - Proceedings of the 29th Symposium on Operating Systems Principles,10.1145/3600006.3613155
+rayyan_pool,18,TopFull: An Adaptive Top-Down Overload Control for SLO-Oriented Microservices - Proceedings of the ACM SIGCOMM 2024 Conference,10.1145/3651890.3672253
+rayyan_pool,23,Overload Control for Scaling WeChat Microservices - Proceedings of the ACM Symposium on Cloud Computing,10.1145/3267809.3267823
+rayyan_pool,24,CloudSentry: Two-Stage Heavy Hitter Detection for Cloud-Scale Gateway Overload Protection,10.1109/tpds.2023.3301852
+rayyan_pool,25,"Understanding E-Commerce Systems under Massive Flash Crowd: Measurement, Analysis, and Implications",10.1109/tsc.2017.2767600
+rayyan_pool,26,Designing High-Availability and Fault-Tolerant API Gateways for High-Concurrency Microservice Systems,10.1109/iccc68654.2025.11437944
+rayyan_pool,27,Friend or Foe: Strong Consistency vs. Overload in High-Availability Distributed Systems and SDN,10.1109/issrew.2018.00-30
+rayyan_pool,30,Auto-scaling of Web Applications in Clouds: A Tail Latency Evaluation,10.1109/ucc48980.2020.00037
+rayyan_pool,32,CascadeGuard: Topology-Aware Predictive Modeling for Preventing Cascading Failures in Distributed Search Systems,10.1109/icarai70085.2026.11635122
+rayyan_pool,33,Designing a Multi-Layered Rate Limiting Framework for Resilient Cloud-Native Systems,10.1109/icstsn67075.2025.11397959
+rayyan_pool,34,Structure-Aware Reinforcement Learning for Node-Overload Protection in Mobile Edge Computing,10.1109/tccn.2022.3195503
+rayyan_pool,35,Modeling the Interactions between Core Allocation and Overload Control in μs-Scale Network Stacks,10.1109/mascots67699.2025.11283398
+rayyan_pool,40,Model-switching: Dealing with fluctuating workloads in machine-learning-as-a-service systems,
+rayyan_pool,41,Overload control for virtual network functions under CPU contention,10.1016/j.future.2019.04.007
+rayyan_pool,44,Defcon: Preventing Overload with Graceful Feature Degradation,
+rayyan_pool,45,Mitigation of flash crowd in web services by providing feedback information to users,10.1587/transinf.2020mpp0003
+rayyan_pool,46,"The Hidden Cost of AI Systems: Latency Amplification, Retries, and Cascading Failures in Production",10.1109/smartcloud69481.2026.00015
+rayyan_pool,47,MITIGATING METASTABLE FAILURES IN DISTRIBUTED SYSTEMS WITH OFFLINE REINFORCEMENT LEARNING,
+rayyan_pool,49,Dynamic tuning and overload management of thread pool system,10.14569/ijacsa.2018.091162
+rayyan_pool,50,Adversarial Resilience Engineering for Digital Finance Microservices: Stability Controls and Amplification-Aware Incident Replays,10.1109/cloudsummit68932.2026.00018
+rayyan_pool,51,"Trigger, Not Root Cause: Re-Examining GitHubs 2024 to 2026 Availability Decline Under Artificial Intelligence-Driven Load",10.3390/fi18070377
+rayyan_pool,52,Method overloading the circuit,10.1145/3542929.3563466
+rayyan_pool,54,Protego: Overload Control for Applications with Unpredictable Lock Contention,
+rayyan_pool,55,Metastable Failures in the Wild,
+rayyan_pool,57,Overload control for µs-scale RPCs with breakwater,
+rayyan_pool,60,Scalable overload prediction in cloud computing using a hybrid queuing-theoretic and machine learning framework,10.1007/s00607-025-01586-w
+rayyan_pool,22,Dynamically Balancing Load with Overload Control for Microservices,10.1145/3676167
+rayyan_pool,43,Rajomon: Decentralized and Coordinated Overload Control for Latency-Sensitive Microservices,
+snowball_pass1_include,,RetryGuard: Preventing Self-Inflicted and Attack-Driven Retry Storms in Cloud Applications,
+snowball_pass1_include,,Towards Designing An Execution Control System with Metastability Resilience,10.1109/icccn69946.2026.11662935
+snowball_pass1_include,,Cooperative Graceful Degradation in Containerized Clouds,10.1145/3669940.3707244
+snowball_pass1_include,,Targeting Tail Latency in Replicated Systems with Proactive Rejection,10.1145/3652892.3700775
+snowball_pass1_include,,PARD: Enhancing Goodput for Inference Pipeline via Proactive Request Dropping,10.1145/3767295.3803581
+snowball_pass1_include,,Mitigating Application Resource Overload with Targeted Task Cancellation,10.1145/3731569.3764835
+snowball_pass1_include,,Bouncer: Admission Control with Response Time Objectives for Low-latency Online Data Systems,10.1145/3626246.3653384
+snowball_pass1_include,,Noah: Reinforcement-Learning-Based Rate Limiter for Microservices in Large-Scale E-Commerce Services,10.1109/tnnls.2023.3264038
+snowball_pass1_include,,CoreSync: A Protocol for Joint Core Scheduling and Overload Control of µs-Scale Tasks,10.1109/icnp65844.2025.11192365
+snowball_pass1_include,,Empirical Study on Request Timeout and Retry for Microservices Communication,10.1109/prdc63035.2024.00037
+snowball_pass1_include,,"If At First You Don’t Succeed, Try, Try, Again...? Insights and LLM-informed Tooling for Detecting Retry Bugs in Software Systems",10.1145/3694715.3695971
+snowball_pass1_include,,Service mesh circuit breaker: From panic button to performance management tool,10.1145/3447851.3458740
+snowball_pass1_maybe,,Aequitas: admission control for performance-critical RPCs in datacenters,10.1145/3544216.3544271
+snowball_pass1_maybe,,ScaleCheck: A Single-Machine Approach for Discovering Scalability Bugs in Large Distributed Systems,
+snowball_pass1_maybe,,Analyzing Metastable Failures,10.1145/3713082.3730380
+snowball_pass1_maybe,,Frontier-to-Runbook: Compiling Censor-aware Guardrails for Multi-tenant Telemetry Storage,10.1109/cloudsummit68932.2026.00007
+snowball_pass1_maybe,,Shenango: Achieving high CPU efficiency for latency-sensitive datacenter workloads,
+snowball_pass1_maybe,,One-Size-Fits-None: Understanding and Enhancing Slow-Fault Tolerance in Modern Distributed Systems,
+snowball_pass1_maybe,,Pilot Execution: Simulating Failure Recovery In Situ for Production Distributed Systems,
+snowball_pass1_maybe,,Deriving Semantic Checkers from Tests to Detect Silent Failures in Production Distributed Systems,
+snowball_pass1_maybe,,Efficient Exposure of Partial Failure Bugs in Distributed Systems with Inferred Abstract States,
+snowball_pass1_maybe,,Pcatch: automatically detecting performance cascading bugs in cloud systems,10.1145/3190508.3190552
+snowball_pass1_maybe,,Towards Performance Robustness for Microservices,
+snowball_pass1_maybe,,Large Language Models as a Stress Test for Enterprise API Gateways,10.1109/icdcsw72724.2026.00028
+snowball_pass1_maybe,,Using load shedding to avoid overload,
+snowball_pass1_maybe,,Everyone loves file: File storage service (FSS) in oracle cloud infrastructure,
+snowball_pass1_maybe,,μtune: Auto-tuned threading for OLDI microservices,
+snowball_pass1_maybe,,Retry Amplification in Distributed Systems: A Systematic Analysis of Retry Policies and Their Role in Cascading Failures,10.2139/ssrn.6313332
+snowball_pass1_maybe,,A tolerance analysis framework for microservice-based systems against cascading failures,10.1186/s42400-025-00399-w
+snowball_pass1_maybe,,"DRACO: Distributed Resource-aware Admission Control for large-scale, multi-tier systems",10.1016/j.jpdc.2024.104935
+snowball_pass1_maybe,,Kerveros: Efficient and Scalable Cloud Admission Control,
+snowball_pass1_maybe,,Trustworthy Graceful Degradation: Fault Tolerance across Service Boundaries,
+snowball_pass1_maybe,,Target Group Load Shedding for Application Load Balancer,
+snowball_pass1_pre-2018 background,,Site Reliability Engineering: How Google Runs Production Systems,
+snowball_pass1_pre-2018 background,,Distributed resource management across process boundaries,10.1145/3127479.3132020
+snowball_pass1_pre-2018 background,,In Search of an Understandable Consensus Algorithm,
+snowball_pass1_pre-2018 background,,The part-time parliament,10.1145/279227.279229
+snowball_pass1_pre-2018 background,,Why Does the Cloud Stop Computing?: Lessons from Hundreds of Service Outages,10.1145/2987550.2987583
+snowball_pass1_pre-2018 background,,Simple Testing Can Prevent Most Critical Failures: An Analysis of Production Failures in Distributed Data-Intensive Systems,
+snowball_pass1_pre-2018 background,,"SEDA: an architecture for well-conditioned, scalable internet services",10.1145/502034.502057
+snowball_pass1_pre-2018 background,,Eliminating receive livelock in an interrupt-driven kernel,10.1145/263326.263335
+snowball_pass1_pre-2018 background,,Scaling memcache at facebook,
+snowball_pass1_pre-2018 background,,Overload management as a fundamental service design primitive,
+snowball_pass1_exclude,,RetryGuard: Preventing Self-Inflicted Retry Storms in Cloud Microservices Applications,10.48550/arxiv.2511.23278
+snowball_pass1_exclude,,Towards Hybrid Cooperative-Preemptive Scheduling,10.1145/3764860.3768329
+snowball_pass1_exclude,,Autothrottle: A Practical Bi-Level Approach to Resource Management for SLO-Targeted Microservices,
+snowball_pass1_exclude,,Sinan: ML-based and QoS-aware resource management for cloud microservices,10.1145/3445814.3446693
+snowball_pass1_exclude,,An open-source benchmark suite for microservices and their hardware-software implications for cloud & edge systems,10.1145/3297858.3304013
+snowball_pass1_exclude,,First-Order Recoverability Collapse in Self-Referential Information Decoders,10.48550/arxiv.2606.24861
+snowball_pass1_exclude,,Characterizing Metastable Faults and Failures,10.48550/arxiv.2606.00942
+snowball_pass1_exclude,,SREGym: A Live Training Ground for AI SRE Agents with High-Fidelity Failure Drills,10.1145/3786335.3813208
+snowball_pass1_exclude,,Formal Analysis of Metastable Failures in Software Systems,10.48550/arxiv.2510.03551
+snowball_pass1_exclude,,Brook-2PL: Tolerating High Contention Workloads with A Deadlock-Free Two-Phase Locking Protocol,10.1145/3769767
+snowball_pass1_exclude,,Fail through the Cracks: Cross-System Interaction Failures in Modern Cloud Systems,10.1145/3552326.3587448
+snowball_pass1_exclude,,Understanding and Detecting Software Upgrade Failures in Distributed Systems,10.1145/3477132.3483577
+snowball_pass1_exclude,,FIRM: An Intelligent Fine-Grained Resource Management Framework for SLO-Oriented Microservices,
+snowball_pass1_exclude,,Fail-Slow at Scale: Evidence of Hardware Performance Faults in Large Production Systems,
+snowball_pass1_exclude,,Kairos: Lightweight Testing Framework for Timing-Induced Interaction Failures in LTE and 5G Core Networks,10.48550/arxiv.2605.30985
+snowball_pass1_exclude,,TuxBot: Semantic-Aware Online OS Tuning with Large Language Models,
+snowball_pass1_exclude,,SREGym: A Live Benchmark for AI SRE Agents with High-Fidelity Failure Scenarios,10.48550/arxiv.2605.07161
+snowball_pass1_exclude,,ImmortalChopper: Real-Time and Resilient Distributed Transactions in the Edge-Cloud,10.1109/icde65706.2026.00152
+snowball_pass1_exclude,,Stabl: The Sensitivity of Blockchains to Failures,10.1145/3721462.3730952
+snowball_pass1_exclude,,Rethinking the Evaluation of Microservice RCA with a Fault Propagation-Aware Benchmark,10.1145/3797100
+snowball_pass1_exclude,,Intent-based System Design and Operation,10.1145/3766882.3767182
+snowball_pass1_exclude,,Scheduling for Reduced Tail Task Latencies in Highly Utilized Datacenters,10.1145/3698038.3698522
+snowball_pass1_exclude,,Simpler is Better: Revisiting Mencius State Machine Replication,10.1109/srds64841.2024.00026
+snowball_pass1_exclude,,Blueprint: A Toolchain for Highly-Reconfigurable Microservice Applications,10.1145/3600006.3613138
+snowball_pass1_exclude,,On-demand Container Loading in AWS Lambda,10.48550/arxiv.2305.13162
+snowball_pass1_exclude,,On the Temporal Behaviour of a Large-Scale Microservice Architecture,10.1109/noms56928.2023.10154427
+snowball_pass1_exclude,,SemaTune: Semantic-Aware Online OS Tuning with Large Language Models,10.48550/arxiv.2605.15026
+snowball_pass1_exclude,,FlyCatcher: Neural Inference of Runtime Checkers from Tests,10.48550/arxiv.2604.22028
+snowball_pass1_exclude,,Temporal-Aware GPU Resource Allocation for Distributed LLM Inference via Reinforcement Learning,10.1109/tcc.2026.3702578
+snowball_pass1_exclude,,Murphy: Performance Diagnosis of Distributed Cloud Applications,10.1145/3603269.3604877
+snowball_pass1_exclude,,Cross-Timeslot Optimization for Distributed GPU Inference Using Reinforcement Learning,10.48550/arxiv.2507.10259
+snowball_pass1_exclude,,FAIL-STOP PROCESSORS: AN APPROACH TO DESIGNING FAULT-TOLERANT COMPUTING SYSTEMS,
+snowball_pass1_exclude,,Demystifying the Fight Against Complexity: A Comprehensive Study of Live Debugging Activities in Production Cloud Systems,10.1145/3698038.3698568
+snowball_pass1_exclude,,CrashTuner: detecting crash-recovery bugs in cloud systems via meta-info analysis,10.1145/3341301.3359645
+snowball_pass1_exclude,,Efficient scalable thread-safety-violation detection: finding thousands of concurrency bugs during testing,10.1145/3341301.3359638
+snowball_pass1_exclude,,An Analysis of Network-Partitioning Failures in Cloud Systems,10.5555/3291168.3291173
+snowball_pass1_exclude,,Grouper: Scheduling Groups for Multi-Tenant Microsecond-Scale Microservices,
+snowball_pass1_exclude,,Embracing Imbalance: Dynamic Load Shifting among Microservice Containers in Shared Clusters,10.1145/3676641.3716255
+snowball_pass1_exclude,,Admission Control with Response Time Objectives for Low-latency Online Data Systems,10.48550/arxiv.2312.15123
+snowball_pass1_exclude,,Yama: Providing Performance Isolation for Black-Box Offloads,10.1145/3620678.3624792
+snowball_pass1_exclude,,"LEED: A Low-Power, Fast Persistent Key-Value Store on SmartNIC JBOFs",10.1145/3603269.3604880
+snowball_pass1_exclude,,An In-depth Study of Microservice Call Graph and Runtime Performance,10.1109/tpds.2022.3174631
+snowball_pass1_exclude,,Critical Path Guided Decision Making with CALLIGATOR,10.1145/3789240.3829103
+snowball_pass1_exclude,,The Workload-Router-Pool Architecture for LLM Inference Optimization: A Vision Paper from the vLLM Semantic Router Project,10.48550/arxiv.2603.21354
+snowball_pass1_exclude,,Kumo: A Security-Focused Serverless Cloud Simulator,10.1109/ccgrid68966.2026.00076
+snowball_pass1_exclude,,Carbon-Aware Quality Adaptation for Energy-Intensive Services,10.1145/3679240.3734614
+snowball_pass1_exclude,,WASL: Harmonizing Uncoordinated Adaptive Modules in Multi-Tenant Cloud Systems,10.1145/3777884.3797009
+snowball_pass1_exclude,,GRAF: a graph neural network based proactive resource allocation framework for SLO-oriented microservices,10.1145/3485983.3494866
+snowball_pass1_exclude,,Characterizing Microservice Dependency and Performance: Alibaba Trace Analysis,10.1145/3472883.3487003
+snowball_pass1_exclude,,Autopilot: workload autoscaling at Google,10.1145/3342195.3387524
+snowball_pass1_exclude,,What bugs cause production cloud incidents?,10.1145/3317550.3321438
+snowball_pass1_exclude,,AWS Post-Event Summaries,
+snowball_pass1_exclude,,Summary of the AWS Service Event in the Northern Virginia (US-EAST-1) Region,
+snowball_pass1_exclude,,AWS Auto Scaling,10.71097/ijsat.v14.i1.2842
+snowball_pass1_exclude,,RPCValet: NI-driven tail-aware balancing of μs-scale rpcs,10.1145/3297858.3304070
+snowball_pass1_exclude,,The design and operation of cloudlab,
+snowball_pass1_exclude,,Homa: A receiver-driven low-latency transport protocol using network priorities,10.1145/3230543.3230564
+snowball_pass1_exclude,,"gRPC, A high performance, open source universal RPC framework",
+snowball_pass1_exclude,,TANGCO: Learning Topology-Aware Capacity Allocation for Overload-driven Cascading Failures,
+snowball_pass1_exclude,,Autothrottle: A Practical Framework for Harvesting CPUs from SLO-Targeted Microservices,10.48550/arxiv.2212.12180
+snowball_pass1_exclude,,Explicit Dropping Notification in Data Centers,10.1109/infocom52122.2024.10621312
+snowball_pass1_exclude,,Queueing Delay Minimization in Overloaded Networks via Rate Control,10.1109/ton.2025.3594628
+snowball_pass1_exclude,,Poster: Understanding Interactions between Overload Control Core Allocation in Low-Latency Network Stacks,10.1145/3603269.3610844
+snowball_pass1_exclude,,L-QoCo: Learning to Optimize Cache Capacity Overloading in Storage Systems,10.1145/3489517.3530466
+snowball_pass1_exclude,,Feature Degradation for Frugality: A Case Study of Overleaf Application,10.1109/icsa-c68850.2026.00063
+snowball_pass1_exclude,,Retry Storm antipattern,
+snowball_pass1_exclude,,Solving the Mystery of Link Imbalance: A Metastable Failure State at Scale,
+snowball_pass1_exclude,,Incident documentation/2021-03-30 Jobqueue overload,
+snowball_pass1_exclude,,Addressing Cascading Failures: Load Shedding and Graceful Degradation,
+snowball_pass1_exclude,,Graceful Degradation of Low-Criticality Tasks in Multiprocessor Dual-Criticality Systems,10.1145/3273905.3273909
