@@ -31,7 +31,7 @@ class HttpClient:
     """GET JSON with retries. Every call is recorded in ``self.log``.
 
     Returns the decoded JSON on 200 and ``None`` on 404. Raises :class:`ApiError`
-    on 401/403 and :class:`RetriesExhausted` if it still fails after ``max_tries``.
+    on other 4xx and :class:`RetriesExhausted` if it still fails after ``max_tries``.
     """
 
     def __init__(
@@ -77,7 +77,7 @@ class HttpClient:
             if response.status_code in RETRY_STATUSES:
                 self._sleep(self._wait_time(response, attempt))
                 continue
-            return None  # other 4xx: retrying will not help
+            raise ApiError(f"{response.status_code} from {redact(response.url)}")
         raise RetriesExhausted(f"gave up on {redact(url)} after {self.max_tries} tries")
 
     @staticmethod

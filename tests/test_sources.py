@@ -113,3 +113,13 @@ def test_semantic_scholar_uses_known_paper_id_first():
     match = SemanticScholarSource(http).find(Seed("57", "Breakwater", s2_id="abc"))
     assert match.method == "s2_id" and match.work.ids == {"s2": "abc"}
     assert len(http.calls) == 1
+
+
+def test_openalex_doi_batch_follows_cursor():
+    pages = {
+        "*": {"results": [OA_RAW] * 50, "meta": {"next_cursor": "c2"}},
+        "c2": {"results": [OA_RAW], "meta": {"next_cursor": None}},
+    }
+    http = FakeHttp(lambda url, p: pages[p["cursor"]])
+    works = OpenAlexSource(http, "KEY").works_by_dois(["10.1/x"])
+    assert len(works) == 51 and len(http.calls) == 2

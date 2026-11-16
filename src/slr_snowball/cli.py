@@ -64,6 +64,12 @@ def main(argv: list[str] | None = None) -> int:
         print("Set OPENALEX_API_KEY (free key from openalex.org).", file=sys.stderr)
         return 2
     s2_key = os.environ.get("S2_API_KEY") or None
+    try:
+        seeds = read_seeds(args.seeds)
+        known = read_known(args.known) if args.known else None
+    except ValueError as exc:
+        print(exc, file=sys.stderr)
+        return 2
 
     log: list[str] = []
     http = HttpClient(pause=args.pause, log=log)
@@ -75,7 +81,7 @@ def main(argv: list[str] | None = None) -> int:
         crossref=None if args.no_crossref else CrossrefSource(http, args.crossref_mailto),
         semantic_scholar=SemanticScholarSource(s2_http, s2_key, args.title_threshold),
         s2_mode=args.s2,
-        known=read_known(args.known) if args.known else None,
+        known=known,
         window=DateWindow(args.year_min, args.date_max),
     )
     sources = ["OpenAlex (backward, forward)"]
@@ -91,7 +97,7 @@ def main(argv: list[str] | None = None) -> int:
     }
 
     try:
-        result = snowballer.run(read_seeds(args.seeds))
+        result = snowballer.run(seeds)
     except ApiError as exc:
         print(f"Stopped: {exc}", file=sys.stderr)
         return 1

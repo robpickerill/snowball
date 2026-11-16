@@ -76,3 +76,7 @@ def test_pool_discards_seeds():
     pool.add(Work(title="Another candidate paper title", doi="10.1/c"), "2", "forward", "openalex")
     assert pool.discard_matching([Work(doi="10.1/s")]) == 1
     assert [c.work.doi for c in pool] == ["10.1/c"]
+
+
+def test_date_window_keeps_unknown_dates():
+    assert DateWindow(2018, "2026-08-31").contains(Work())

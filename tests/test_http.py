@@ -79,3 +79,10 @@ def test_backoff_is_capped():
         session=FakeSession([FakeResponse(429)] * 9), max_tries=9, sleep=lambda s: None
     )
     assert http._wait_time(FakeResponse(429), 8) == 60.0
+
+
+def test_other_4xx_raises_instead_of_returning_none():
+    http, waits = client([FakeResponse(400)])
+    with pytest.raises(ApiError, match="400"):
+        http.get_json("https://api.example.org/x")
+    assert waits == []

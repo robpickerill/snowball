@@ -56,6 +56,7 @@ def test_window_known_records_and_counts(openalex):
     assert not rows["A paper published after the window"]["in_date_window"]
     counts = result.counts()
     assert counts["unique_candidates"] == 5
+    assert counts["seeds_dropped_from_candidates"] == 2
     assert (counts["already_screened"], counts["outside_date_window"], counts["to_screen"]) == (
         1,
         2,

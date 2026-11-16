@@ -68,21 +68,7 @@ class OpenAlexSource(CitationSource):
     def citations(self, work: Work) -> list[Work]:
         if "openalex" not in work.ids:
             return []
-        results: list[Work] = []
-        cursor: str | None = "*"
-        while cursor:
-            page = self._get(
-                "/works",
-                filter=f"cites:{work.ids['openalex']}",
-                cursor=cursor,
-                **{"per-page": self.PAGE_SIZE},
-            )
-            batch = (page or {}).get("results") or []
-            if not batch:
-                break
-            results += [parse_openalex(r) for r in batch]
-            cursor = page.get("meta", {}).get("next_cursor")
-        return results
+        return self._paged(f"cites:{work.ids['openalex']}")
 
     def works_by_dois(self, dois: Iterable[str]) -> list[Work]:
         """Full records for a list of DOIs (used to fill in Crossref and Semantic Scholar hits)."""
@@ -92,8 +78,19 @@ class OpenAlexSource(CitationSource):
         results: list[Work] = []
         for start in range(0, len(values), self.BATCH_SIZE):
             chunk = "|".join(values[start : start + self.BATCH_SIZE])
-            page = self._get("/works", filter=f"{field}:{chunk}", **{"per-page": self.BATCH_SIZE})
-            results += [parse_openalex(r) for r in (page or {}).get("results") or []]
+            results += self._paged(f"{field}:{chunk}")
+        return results
+
+    def _paged(self, filter: str) -> list[Work]:
+        results: list[Work] = []
+        cursor: str | None = "*"
+        while cursor:
+            page = self._get("/works", filter=filter, cursor=cursor, **{"per-page": self.PAGE_SIZE})
+            batch = (page or {}).get("results") or []
+            if not batch:
+                break
+            results += [parse_openalex(r) for r in batch]
+            cursor = page.get("meta", {}).get("next_cursor")
         return results
 
     def _get(self, path: str, **params) -> dict | None:

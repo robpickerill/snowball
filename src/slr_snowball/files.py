@@ -45,17 +45,18 @@ SEED_COLUMNS = [
 ]
 
 
-def _read_csv(path: Path) -> list[dict]:
+def _read_csv_with(path: Path, columns: set[str]) -> list[dict]:
     with open(path, newline="", encoding="utf-8-sig") as f:
-        return list(csv.DictReader(f))
+        reader = csv.DictReader(f)
+        missing = columns - set(reader.fieldnames or [])
+        if missing:
+            raise ValueError(f"{path} is missing column(s): {', '.join(sorted(missing))}")
+        return list(reader)
 
 
 def read_seeds(path: Path) -> list[Seed]:
     """CSV with columns id, title, doi. Optional: year, s2_id. doi may be blank."""
-    rows = _read_csv(path)
-    missing = {"id", "title", "doi"} - set(rows[0] if rows else {})
-    if missing:
-        raise ValueError(f"{path} is missing column(s): {', '.join(sorted(missing))}")
+    rows = _read_csv_with(path, {"id", "title", "doi"})
     return [
         Seed(
             id=r["id"].strip(),
@@ -70,7 +71,7 @@ def read_seeds(path: Path) -> list[Seed]:
 
 def read_known(path: Path) -> KnownRecords:
     """CSV with columns source, title, doi (other columns are ignored)."""
-    return KnownRecords(_read_csv(path))
+    return KnownRecords(_read_csv_with(path, {"source", "title", "doi"}))
 
 
 def _write_csv(path: Path, columns: Sequence[str], rows: Iterable[dict]) -> None:

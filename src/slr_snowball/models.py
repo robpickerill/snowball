@@ -136,6 +136,8 @@ class DateWindow:
     date_max: str  # YYYY-MM-DD
 
     def contains(self, work: Work) -> bool:
+        if not work.year and not work.date:
+            return True
         if work.year < self.year_min:
             return False
         return work.date <= self.date_max if work.date else work.year <= int(self.date_max[:4])
