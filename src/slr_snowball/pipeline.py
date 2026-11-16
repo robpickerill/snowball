@@ -41,6 +41,7 @@ class SnowballResult:
             "seeds_found_openalex": sum(r.openalex.found for r in self.reports),
             "seeds_found_semantic_scholar": sum(bool(r.s2 and r.s2.found) for r in self.reports),
             "raw_links": dict(sorted(self.raw_links.items())),
+            "seeds_dropped_from_candidates": self.seeds_dropped_from_candidates,
             "unique_candidates": len(self.rows),
             "already_screened": sum(1 for r in self.rows if r["already_screened"]),
             "outside_date_window": sum(

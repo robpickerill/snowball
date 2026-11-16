@@ -33,3 +33,11 @@ def test_end_to_end_writes_all_outputs(tmp_path, monkeypatch):
     assert counts["unique_candidates"] == 1 and counts["to_screen"] == 1
     for name in ("candidates.csv", "seed_resolution.csv", "run_log.txt"):
         assert (out / name).exists()
+
+
+def test_known_records_with_wrong_headers_fail(tmp_path, monkeypatch, capsys):
+    known = tmp_path / "known.csv"
+    known.write_text("source,Title,DOI\nrayyan,A paper citing the seed,\n", encoding="utf-8")
+    monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+    assert cli.main(["--seeds", str(write_seeds(tmp_path)), "--known", str(known)]) == 2
+    assert "title" in capsys.readouterr().err
