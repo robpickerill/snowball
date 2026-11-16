@@ -1,0 +1,38 @@
+﻿id,title,match,score,openalex,openalex_title,n_references
+2,Vicious Cycles in Distributed Software Systems,doi,,https://openalex.org/W4388502401,Vicious Cycles in Distributed Software Systems,47
+4,Approaches for Resilience against Cascading Failures in Cloud Datacenters,doi,,https://openalex.org/W2807779271,Approaches for Resilience against Cascading Failures in Cloud Datacenters,45
+6,Self-Adaptive Circuit Breaker Open-State Interval for Enhancing Resiliency of Microservices,doi,,https://openalex.org/W4409917431,Self-Adaptive Circuit Breaker Open-State Interval for Enhancing Resiliency of Microservices,7
+7,MSF-Model: Queuing-Based Analysis and Prediction of Metastable Failures in Replicated Storage Systems,doi,,https://openalex.org/W4405786501,MSF-Model: Queuing-Based Analysis and Prediction of Metastable Failures in Replicated Storage Systems,29
+9,Service-Level Objective-Aware Load-Adaptive Timeout: Balancing Failure Rate and Latency in Microservices Communication,doi,,https://openalex.org/W4412985121,Service-Level Objective-Aware Load-Adaptive Timeout: Balancing Failure Rate and Latency in Microservices Communication,19
+11,FloodGuard: A Prediction-Control Closed Loop for Mitigating Cold-Start Floods in Cloud Services,doi,,https://openalex.org/W7172443428,FloodGuard: A Prediction-Control Closed Loop for Mitigating Cold-Start Floods in Cloud Services,21
+12,Dependability Evaluation of Middleware Technology for Large-scale Distributed Caching,doi,,https://openalex.org/W3049698447,Dependability Evaluation of Middleware Technology for Large-scale Distributed Caching,31
+13,CSnake: Detecting Self-Sustaining Cascading Failure via Causal Stitching of Fault Propagations,doi,,https://openalex.org/W7155501340,CSnake: Detecting Self-Sustaining Cascading Failure via Causal Stitching of Fault Propagations,46
+17,XFaaS: Hyperscale and Low Cost Serverless Functions at Meta,doi,,https://openalex.org/W4387321645,XFaaS: Hyperscale and Low Cost Serverless Functions at Meta,34
+18,TopFull: An Adaptive Top-Down Overload Control for SLO-Oriented Microservices,doi,,https://openalex.org/W4401175739,TopFull: An Adaptive Top-Down Overload Control for SLO-Oriented Microservices,21
+19,SafeLoad: Efficient Admission Control Framework for Identifying Memory-Overloading Queries in Cloud Data Warehouses,doi,,https://openalex.org/W7138979079,SafeLoad: Efficient Admission Control Framework for Identifying Memory-Overloading Queries in Cloud Data Warehouses,15
+22,Dynamically Balancing Load with Overload Control for Microservices,doi,,https://openalex.org/W4400358510,Dynamically Balancing Load with Overload Control for Microservices,14
+23,Overload Control for Scaling WeChat Microservices (DAGOR),doi,,https://openalex.org/W2963128714,Overload Control for Scaling WeChat Microservices,35
+25,"Understanding E-Commerce Systems under Massive Flash Crowd: Measurement, Analysis, and Implications",doi,,https://openalex.org/W2766239816,"Understanding E-Commerce Systems under Massive Flash Crowd: Measurement, Analysis, and Implications",27
+27,Friend or Foe: Strong Consistency vs. Overload in High-Availability Distributed Systems and SDN,doi,,https://openalex.org/W2901282115,Friend or Foe: Strong Consistency vs. Overload in High-Availability Distributed Systems and SDN,9
+30,Auto-scaling of Web Applications in Clouds: A Tail Latency Evaluation,doi,,https://openalex.org/W3116002818,Auto-scaling of Web Applications in Clouds: A Tail Latency Evaluation,23
+32,CascadeGuard: Topology-Aware Predictive Modeling for Preventing Cascading Failures in Distributed Search Systems,doi,,https://openalex.org/W7202133632,CascadeGuard: Topology-Aware Predictive Modeling for Preventing Cascading Failures in Distributed Search Systems,10
+33,Designing a Multi-Layered Rate Limiting Framework for Resilient Cloud-Native Systems,doi,,https://openalex.org/W7131880224,Designing a Multi-Layered Rate Limiting Framework for Resilient Cloud-Native Systems,19
+34,Structure-Aware Reinforcement Learning for Node-Overload Protection in Mobile Edge Computing,doi,,https://openalex.org/W3179308716,Structure-Aware Reinforcement Learning for Node-Overload Protection in Mobile Edge Computing,32
+35,Modeling the Interactions between Core Allocation and Overload Control in us-Scale Network Stacks,doi,,https://openalex.org/W7129000456,Modeling the Interactions between Core Allocation and Overload Control in μs-Scale Network Stacks,0
+36,StreamRAG: A Lock-Aware and Traffic-Aware Query Coordinator in Stream-Based RAG Systems,doi,,https://openalex.org/W4411800339,Streamrag: a Lock-Aware and Traffic-Aware Query Coordinator in Stream-Based Rag Systems,28
+40,Model-Switching: Dealing with Fluctuating Workloads in Machine-Learning-as-a-Service Systems,title-match,1.00,https://openalex.org/W3027653090,Model-Switching: Dealing with Fluctuating Workloads in Machine-Learning-as-a-Service Systems,24
+41,Overload Control for Virtual Network Functions under CPU Contention,doi,,https://openalex.org/W2942338358,Overload control for virtual network functions under CPU contention,57
+43,Rajomon: Decentralized and Coordinated Overload Control for Latency-Sensitive Microservices,NOT FOUND,0.36,,,0
+44,Defcon: Preventing Overload with Graceful Feature Degradation,NOT FOUND,0.47,,,0
+45,Mitigation of Flash Crowd in Web Services by Providing Feedback Information to Users,doi,,https://openalex.org/W3120651461,Mitigation of Flash Crowd in Web Services By Providing Feedback Information to Users,29
+47,Mitigating Metastable Failures in Distributed Systems with Offline Reinforcement Learning,NOT FOUND,0.54,,,0
+49,Dynamic Tuning and Overload Management of Thread Pool System,doi,,https://openalex.org/W2902593100,Dynamic Tuning and Overload Management of Thread Pool System,21
+51,"Trigger, Not Root Cause: Re-Examining GitHub's 2024 to 2026 Availability Decline Under Artificial Intelligence-Driven Load",doi,,https://openalex.org/W7169793415,"Trigger, Not Root Cause: Re-Examining GitHub’s 2024 to 2026 Availability Decline Under Artificial Intelligence-Driven Load",11
+54,Protego: Overload Control for Applications with Unpredictable Lock Contention,NOT FOUND,0.41,,,0
+55,Metastable Failures in the Wild,NOT FOUND,0.63,,,0
+56,Elastic Overload Control Method for Microservice-Based Cloud Servers under Traffic Surges,doi,,https://openalex.org/W4416212538,Elastic overload control method for microservice-based cloud servers under traffic surges,0
+57,Overload Control for us-scale RPCs with Breakwater,NOT FOUND,0.46,,,0
+58,Modeling Metastability,doi,,https://openalex.org/W4416276810,Modeling Metastability,2
+59,VNF-DOC: A Dynamic Overload Controller for Virtualized Network Functions in Cloud,doi,,https://openalex.org/W3013323485,VNF-DOC: A Dynamic Overload Controller for Virtualized Network Functions in Cloud,15
+60,Scalable Overload Prediction in Cloud Computing using a Hybrid Queuing-Theoretic and Machine Learning Framework,doi,,https://openalex.org/W4416307727,Scalable overload prediction in cloud computing using a hybrid queuing-theoretic and machine learning framework,35
+61,KUNSERVE: Parameter-Centric Memory Management for Efficient Memory Overloading Handling in LLM Serving,doi,,https://openalex.org/W7155531600,KUNSERVE: Parameter-centric Memory Management for Efficient Memory Overloading Handling in LLM Serving,10
