@@ -131,3 +131,38 @@ def test_cli_sample_without_seed_fails(tmp_path):
 def test_committed_keywords_file_loads():
     rule = KeywordRule.load("data/round1/keywords.toml")
     assert {"F1", "F2"} <= set(rule.topic) and "D" in rule.context
+
+
+def test_cli_ris_holds_hits_no_abstract_and_sampled_only(tmp_path):
+    header = ["record_id", "title", "to_screen", "abstract", "year", "venue", "doi", "type"]
+    candidates = write_csv(
+        tmp_path / "candidates.csv",
+        header,
+        [
+            [
+                "1",
+                "Metastable failures in the cloud",
+                "True",
+                "x",
+                "2024",
+                "V",
+                "10.1/a",
+                "conference-paper",
+            ],
+            ["2", "Unrelated one", "True", "x", "2023", "", "", "article"],
+            ["3", "Unrelated two", "True", "x", "2023", "", "", "article"],
+            ["4", "No abstract here", "True", "", "2022", "", "", "dissertation"],
+        ],
+    )
+    out = tmp_path / "out"
+    args = ["--candidates", str(candidates), "--terms", "data/round1/keywords.toml"]
+    assert screen_cli.main([*args, "--out", str(out), "--sample", "1", "--seed", "1", "--ris"]) == 0
+
+    records = (out / "keyword_screen.ris").read_text(encoding="utf-8").split("ER  - \n")[:-1]
+    assert len(records) == 3
+    assert records[0] == (
+        "TY  - CONF\nAN  - 1\nTI  - Metastable failures in the cloud\nPY  - 2024\nT2  - V\n"
+        "DO  - 10.1/a\nKW  - hit\nN1  - F1: metastab*; D: cloud*\nAB  - x\n"
+    )
+    assert "TY  - THES\nAN  - 4\n" in records[1] and "KW  - no abstract\n" in records[1]
+    assert "KW  - excluded\nKW  - sampled\n" in records[2]

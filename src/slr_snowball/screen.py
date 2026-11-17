@@ -8,7 +8,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from .files import read_csv, write_csv
+from .files import read_csv, write_csv, write_ris
 from .keywords import EXCLUDED, KEYWORD_HIT, NO_ABSTRACT, KeywordRule, screen
 
 SCREEN_COLUMNS = [
@@ -43,6 +43,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p.add_argument("--seed", type=int, help="random seed for --sample (required with it)")
     p.add_argument("--check", type=Path, help="CSV of known includes (title, abstract) to test")
+    p.add_argument(
+        "--ris", action="store_true", help="also write hits, no-abstract and sampled records as RIS"
+    )
     return p
 
 
@@ -66,6 +69,11 @@ def main(argv: list[str] | None = None) -> int:
         SCREEN_COLUMNS,
         ({c: r.get(c, "") for c in SCREEN_COLUMNS} for r in screened),
     )
+    if args.ris:
+        write_ris(
+            args.out / "keyword_screen.ris",
+            (r for r in screened if r["keyword_status"] != EXCLUDED or r["sampled"]),
+        )
     status = Counter(r["keyword_status"] for r in screened)
     counts = {
         "terms_file": str(args.terms),

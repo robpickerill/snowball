@@ -71,6 +71,9 @@ uv run slr-screen --candidates round1/candidates.csv --terms data/round1/keyword
   what the filter lost.
 - `--check data/round1/included.csv` (`title`, `abstract`) lists known includes that
   aren't hits.
+- `--ris` also writes `keyword_screen.ris`: hits, `no abstract` and sampled records, for
+  import into Rayyan as a new source. `KW` holds the status (and `sampled`), `N1` the
+  matched terms, `AN` the `record_id`. Decisions are made in Rayyan, not in `decision`.
 
 Outputs `keyword_screen.csv` (`hit`, then `no abstract`, then `excluded`, with
 `matched_terms` and an empty `decision`) and `keyword_counts.json` for the PRISMA

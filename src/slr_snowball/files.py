@@ -81,6 +81,43 @@ def write_csv(path: Path, columns: Sequence[str], rows: Iterable[dict]) -> None:
         writer.writerows(rows)
 
 
+RIS_TYPES = {
+    "conference-paper": "CONF",
+    "conference": "CONF",
+    "article": "JOUR",
+    "journalarticle": "JOUR",
+    "review": "JOUR",
+    "editorial": "JOUR",
+    "preprint": "UNPB",
+    "book": "BOOK",
+    "book-chapter": "CHAP",
+    "dissertation": "THES",
+    "report": "RPRT",
+}
+
+
+def write_ris(path: Path, rows: Iterable[dict]) -> None:
+    """One RIS record per row, keyword status and sampling as KW tags, matched terms as N1."""
+    with open(path, "w", encoding="utf-8") as f:
+        for r in rows:
+            tags = [
+                ("TY", RIS_TYPES.get(r.get("type", ""), "GEN")),
+                ("AN", r.get("record_id", "")),
+                ("TI", r["title"]),
+                ("PY", r.get("year", "")),
+                ("T2", r.get("venue", "")),
+                ("DO", r.get("doi", "")),
+                ("KW", r["keyword_status"]),
+                ("KW", "sampled" if r["sampled"] else ""),
+                ("N1", r["matched_terms"]),
+                ("AB", r["abstract"]),
+            ]
+            for tag, value in tags:
+                if value := " ".join(str(value).split()):
+                    f.write(f"{tag}  - {value}\n")
+            f.write("ER  - \n")
+
+
 class OutputWriter:
     """Writes candidates.csv, seed_resolution.csv, prisma_counts.json and run_log.txt."""
 
