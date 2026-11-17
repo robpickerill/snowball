@@ -1,6 +1,6 @@
 # Keep a record if its title or abstract matches a [topic] term and a [context] term.
 # `word*` matches any word starting with "word". Hyphens and punctuation count as spaces.
-# F1, F2 and D are the protocol search string. Freeze this file before screening.
+# F1, F2 and D are the protocol search string.
 
 [topic]
 F1 = [
