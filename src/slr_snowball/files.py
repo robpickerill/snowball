@@ -97,7 +97,7 @@ RIS_TYPES = {
 
 
 def write_ris(path: Path, rows: Iterable[dict]) -> None:
-    """One RIS record per row, keyword status and sampling as KW tags, matched terms as N1."""
+    """One RIS record per row, keyword status as KW, matched terms as N1."""
     with open(path, "w", encoding="utf-8") as f:
         for r in rows:
             tags = [
@@ -108,7 +108,6 @@ def write_ris(path: Path, rows: Iterable[dict]) -> None:
                 ("T2", r.get("venue", "")),
                 ("DO", r.get("doi", "")),
                 ("KW", r["keyword_status"]),
-                ("KW", "sampled" if r["sampled"] else ""),
                 ("N1", r["matched_terms"]),
                 ("AB", r["abstract"]),
             ]

@@ -44,7 +44,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--seed", type=int, help="random seed for --sample (required with it)")
     p.add_argument("--check", type=Path, help="CSV of known includes (title, abstract) to test")
     p.add_argument(
-        "--ris", action="store_true", help="also write hits, no-abstract and sampled records as RIS"
+        "--ris", action="store_true", help="also write hits and no-abstract records as RIS"
     )
     return p
 
@@ -72,7 +72,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.ris:
         write_ris(
             args.out / "keyword_screen.ris",
-            (r for r in screened if r["keyword_status"] != EXCLUDED or r["sampled"]),
+            (r for r in screened if r["keyword_status"] != EXCLUDED),
         )
     status = Counter(r["keyword_status"] for r in screened)
     counts = {

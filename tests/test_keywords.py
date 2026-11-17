@@ -133,7 +133,7 @@ def test_committed_keywords_file_loads():
     assert {"F1", "F2"} <= set(rule.topic) and "D" in rule.context
 
 
-def test_cli_ris_holds_hits_no_abstract_and_sampled_only(tmp_path):
+def test_cli_ris_holds_hits_and_no_abstract_only(tmp_path):
     header = ["record_id", "title", "to_screen", "abstract", "year", "venue", "doi", "type"]
     candidates = write_csv(
         tmp_path / "candidates.csv",
@@ -159,10 +159,10 @@ def test_cli_ris_holds_hits_no_abstract_and_sampled_only(tmp_path):
     assert screen_cli.main([*args, "--out", str(out), "--sample", "1", "--seed", "1", "--ris"]) == 0
 
     records = (out / "keyword_screen.ris").read_text(encoding="utf-8").split("ER  - \n")[:-1]
-    assert len(records) == 3
+    assert len(records) == 2
     assert records[0] == (
         "TY  - CONF\nAN  - 1\nTI  - Metastable failures in the cloud\nPY  - 2024\nT2  - V\n"
         "DO  - 10.1/a\nKW  - hit\nN1  - F1: metastab*; D: cloud*\nAB  - x\n"
     )
     assert "TY  - THES\nAN  - 4\n" in records[1] and "KW  - no abstract\n" in records[1]
-    assert "KW  - excluded\nKW  - sampled\n" in records[2]
+    assert "excluded" not in "".join(records)
