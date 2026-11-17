@@ -1,7 +1,7 @@
 from slr_snowball.text import (
     natural_key,
     normalise_doi,
-    normalise_title,
+    normalise_text,
     rebuild_abstract,
     short_openalex_id,
     title_similarity,
@@ -15,8 +15,8 @@ def test_normalise_doi_strips_prefixes_and_case():
     assert normalise_doi(None) == ""
 
 
-def test_normalise_title_ignores_punctuation_and_spacing():
-    assert normalise_title("  Breakwater: Overload  Control!") == "breakwater overload control"
+def test_normalise_text_ignores_punctuation_and_spacing():
+    assert normalise_text("  Breakwater: Overload  Control!") == "breakwater overload control"
 
 
 def test_title_similarity():

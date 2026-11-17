@@ -8,17 +8,17 @@ import tomllib
 from collections.abc import Sequence
 from pathlib import Path
 
-from .text import normalise_title
+from .text import normalise_text
 
-KEYWORD_HIT = "keyword hit"
-NO_ABSTRACT = "manual (no abstract)"
-EXCLUDED = "excluded by keywords"
+KEYWORD_HIT = "hit"
+NO_ABSTRACT = "no abstract"
+EXCLUDED = "excluded"
 _ORDER = {KEYWORD_HIT: 0, NO_ABSTRACT: 1, EXCLUDED: 2}
 
 
 def _pattern(term: str) -> re.Pattern:
     """`metastab*` matches word prefixes, `retry storm` whole words. Punctuation counts as a space."""
-    words = normalise_title(term.removesuffix("*"))
+    words = normalise_text(term.removesuffix("*"))
     if not words:
         raise ValueError(f"empty keyword: {term!r}")
     return re.compile(r"\b" + re.escape(words) + ("" if term.endswith("*") else r"\b"))
@@ -54,7 +54,7 @@ class KeywordRule:
 
     def classify(self, title: str, abstract: str) -> tuple[str, str]:
         """Return (status, matched_terms) for one record."""
-        text = normalise_title(f"{title} {abstract}")
+        text = normalise_text(f"{title} {abstract}")
         topic = _hits(self.topic, text)
         context = _hits(self.context, text)
         matched = "; ".join(f"{g}: {', '.join(t)}" for g, t in {**topic, **context}.items())
@@ -75,7 +75,7 @@ def screen(
     out = []
     for row in rows:
         status, matched = rule.classify(row["title"], row["abstract"])
-        out.append({**row, "keyword_status": status, "matched_terms": matched, "sampled": ""})
+        out.append({**row, "keyword_status": status, "matched_terms": matched, "sampled": False})
     excluded = [r for r in out if r["keyword_status"] == EXCLUDED]
     for r in random.Random(seed).sample(excluded, min(sample, len(excluded))):
         r["sampled"] = True

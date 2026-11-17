@@ -7,7 +7,7 @@ from collections.abc import Iterable
 from difflib import SequenceMatcher
 
 from .models import Candidate
-from .text import normalise_title
+from .text import normalise_text
 
 
 class DuplicateFinder:
@@ -41,7 +41,7 @@ class DuplicateFinder:
         return {k: sorted(v) for k, v in flags.items()}
 
     def similar(self, title_a: str, title_b: str) -> bool:
-        a, b = normalise_title(title_a), normalise_title(title_b)
+        a, b = normalise_text(title_a), normalise_text(title_b)
         if not a or not b:
             return False
         m = SequenceMatcher(None, a, b)

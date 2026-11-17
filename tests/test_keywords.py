@@ -114,12 +114,12 @@ def test_cli_screens_only_to_screen_rows_and_reports_check(tmp_path, capsys):
     assert screen_cli.main(args) == 0
 
     counts = json.loads((out / "keyword_counts.json").read_text())
-    assert (counts["to_screen"], counts["keyword_hit"], counts["excluded_by_keywords"]) == (3, 1, 1)
-    assert counts["manual_no_abstract"] == 1 and counts["sampled_from_excluded"] == 1
+    assert (counts["to_screen"], counts["hit"], counts["excluded"]) == (3, 1, 1)
+    assert counts["no_abstract"] == 1 and counts["sampled"] == 1
     with open(out / "keyword_screen.csv", newline="", encoding="utf-8-sig") as f:
         screened = list(csv.DictReader(f))
     assert [r["record_id"] for r in screened] == ["1", "4", "3"]
-    assert screened[2]["sampled"] == "True" and screened[0]["your_decision"] == ""
+    assert screened[2]["sampled"] == "True" and screened[0]["decision"] == ""
     assert "1 of 2 are keyword hits" in capsys.readouterr().out
 
 

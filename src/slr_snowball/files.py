@@ -45,7 +45,7 @@ SEED_COLUMNS = [
 ]
 
 
-def _read_csv_with(path: Path, columns: set[str]) -> list[dict]:
+def read_csv(path: Path, columns: set[str]) -> list[dict]:
     with open(path, newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         missing = columns - set(reader.fieldnames or [])
@@ -56,7 +56,7 @@ def _read_csv_with(path: Path, columns: set[str]) -> list[dict]:
 
 def read_seeds(path: Path) -> list[Seed]:
     """CSV with columns id, title, doi. Optional: year, s2_id. doi may be blank."""
-    rows = _read_csv_with(path, {"id", "title", "doi"})
+    rows = read_csv(path, {"id", "title", "doi"})
     return [
         Seed(
             id=r["id"].strip(),
@@ -71,10 +71,10 @@ def read_seeds(path: Path) -> list[Seed]:
 
 def read_known(path: Path) -> KnownRecords:
     """CSV with columns source, title, doi (other columns are ignored)."""
-    return KnownRecords(_read_csv_with(path, {"source", "title", "doi"}))
+    return KnownRecords(read_csv(path, {"source", "title", "doi"}))
 
 
-def _write_csv(path: Path, columns: Sequence[str], rows: Iterable[dict]) -> None:
+def write_csv(path: Path, columns: Sequence[str], rows: Iterable[dict]) -> None:
     with open(path, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.DictWriter(f, fieldnames=list(columns))
         writer.writeheader()
@@ -89,8 +89,8 @@ class OutputWriter:
         self.out_dir.mkdir(parents=True, exist_ok=True)
 
     def write(self, result: SnowballResult, run_info: dict, call_log: Sequence[str]) -> dict:
-        _write_csv(self.out_dir / "candidates.csv", CANDIDATE_COLUMNS, result.rows)
-        _write_csv(
+        write_csv(self.out_dir / "candidates.csv", CANDIDATE_COLUMNS, result.rows)
+        write_csv(
             self.out_dir / "seed_resolution.csv", SEED_COLUMNS, (r.to_row() for r in result.reports)
         )
         counts = {**run_info, **result.counts()}

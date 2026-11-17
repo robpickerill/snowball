@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Iterable, Iterator
 from dataclasses import dataclass, field
 
-from .text import normalise_doi, normalise_title
+from .text import normalise_doi, normalise_text
 
 BACKWARD, FORWARD = "backward", "forward"
 
@@ -49,7 +49,7 @@ class Work:
         return (
             f"s2:{self.ids['s2']}"
             if "s2" in self.ids
-            else f"title:{normalise_title(self.title)[:60]}"
+            else f"title:{normalise_text(self.title)[:60]}"
         )
 
     def merge(self, other: Work) -> None:
@@ -119,13 +119,13 @@ class KnownRecords:
             if record.get("doi"):
                 self._by_doi[normalise_doi(record["doi"])] = source
             if record.get("title"):
-                self._by_title[normalise_title(record["title"])] = source
+                self._by_title[normalise_text(record["title"])] = source
 
     def match(self, work: Work) -> str | None:
         """Return the source label of a matching known record, or None."""
         if work.doi and work.doi in self._by_doi:
             return self._by_doi[work.doi]
-        return self._by_title.get(normalise_title(work.title))
+        return self._by_title.get(normalise_text(work.title))
 
 
 @dataclass(frozen=True)
@@ -181,7 +181,7 @@ class CandidatePool:
     def keys(cls, work: Work) -> list[str]:
         keys = [f"doi:{work.doi}"] if work.doi else []
         keys += [f"{source}:{value}" for source, value in work.ids.items()]
-        title = normalise_title(work.title)
+        title = normalise_text(work.title)
         if len(title) >= cls.MIN_TITLE_KEY:
             keys.append(f"title:{title}")
         return keys

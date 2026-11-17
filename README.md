@@ -66,14 +66,16 @@ uv run slr-screen --candidates round1/candidates.csv --terms data/round1/keyword
 - A record is a hit if its title or abstract has a `[topic]` term and a `[context]` term.
 - `metastab*` matches word starts, terms without `*` match whole words. Case and hyphens
   don't matter.
-- No abstract: `manual (no abstract)`. Screen these on title.
+- Records without an abstract are `no abstract`. Screen these on title.
 - `--sample 35 --seed 1` marks 35 excluded records in `sampled`. Screen these too, to see
   what the filter lost.
-- `--check data/round1/included.csv` (`title`, `abstract`) lists known includes that aren't hits.
+- `--check data/round1/included.csv` (`title`, `abstract`) lists known includes that
+  aren't hits.
 
-Outputs `keyword_screen.csv` (hits, manual, excluded, with `matched_terms` and an empty
-`your_decision`) and `keyword_counts.json` for the PRISMA "excluded by automation tools"
-box. The terms file is frozen before screening and cited in the methods.
+Outputs `keyword_screen.csv` (`hit`, then `no abstract`, then `excluded`, with
+`matched_terms` and an empty `decision`) and `keyword_counts.json` for the PRISMA
+"excluded by automation tools" box. The terms file is frozen before screening and cited in
+the methods.
 
 ## Sources and merging
 
