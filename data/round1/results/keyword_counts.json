@@ -1,0 +1,9 @@
+{
+  "terms_file": "data/round1/keywords.toml",
+  "to_screen": 694,
+  "keyword_hit": 191,
+  "manual_no_abstract": 105,
+  "excluded_by_keywords": 398,
+  "sampled_from_excluded": 35,
+  "sample_seed": 1
+}

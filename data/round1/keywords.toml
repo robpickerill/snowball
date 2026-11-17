@@ -1,0 +1,95 @@
+# Keep a record if its title or abstract matches a [topic] term and a [context] term.
+# `word*` matches any word starting with "word". Hyphens and punctuation count as spaces.
+# F1, F2 and D are the protocol search string. Freeze this file before screening.
+
+[topic]
+F1 = [
+  "metastab*",
+  "congestion collapse",
+  "congestive collapse",
+  "cascading failure*",
+  "failure cascade*",
+  "retry storm*",
+  "thundering herd",
+  "vicious cycle*",
+]
+F2 = [
+  "overload*",
+  "work amplification",
+  "retry amplification",
+  "flash crowd*",
+  "load spike*",
+  "traffic spike*",
+]
+response = [
+  "load shed*",
+  "shed load*",
+  "admission control*",
+  "rate limit*",
+  "backpressure*",
+  "back pressure*",
+  "graceful degradation",
+  "brownout*",
+  "circuit break*",
+  "throttl*",
+  "load balanc*",
+]
+capacity = [
+  "autoscal*",
+  "auto scal*",
+  "elastic*",
+  "scale out",
+  "scaling out",
+  "capacity planning",
+]
+load = [
+  "high load*",
+  "peak load*",
+  "excessive load*",
+  "high workload*",
+  "heavy workload*",
+  "burst*",
+  "traffic surge*",
+  "tail latenc*",
+  "slo",
+  "slos",
+  "congestion*",
+]
+
+[context]
+D = [
+  "cloud*",
+  "microservice*",
+  "serverless",
+  "distributed system*",
+  "datacenter*",
+  "datacentre*",
+  "data center*",
+  "data centre*",
+  "data-center*",
+  "data-centre*",
+]
+systems = [
+  "micro service*",
+  "distributed*",
+  "server*",
+  "rpc*",
+  "kubernetes",
+  "container*",
+  "service mesh*",
+  "edge*",
+  "fog*",
+  "database*",
+  "cluster*",
+  "latenc*",
+  "api",
+  "apis",
+  "network function*",
+  "nfv",
+  "online service*",
+  "web service*",
+  "web application*",
+  "outage*",
+  "availability",
+  "incident*",
+]

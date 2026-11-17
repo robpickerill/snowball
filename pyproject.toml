@@ -3,11 +3,12 @@ name = "slr-snowball"
 version = "1.0.0"
 description = "Backward and forward citation snowballing for systematic literature reviews (OpenAlex, Crossref, Semantic Scholar)."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = ["requests>=2.31"]
 
 [project.scripts]
 slr-snowball = "slr_snowball.cli:main"
+slr-screen = "slr_snowball.screen:main"
 
 [dependency-groups]
 dev = ["pytest>=8", "ruff>=0.6"]
@@ -18,7 +19,7 @@ build-backend = "uv_build"
 
 [tool.ruff]
 line-length = 100
-target-version = "py310"
+target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]

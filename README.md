@@ -42,8 +42,9 @@ rayyan_pool,14,Metastable failures in distributed systems,10.1145/3458336.346528
 Each round: append the last round's screened records to `known_records.csv` and use the
 newly included papers as seeds.
 
-`data/round1` holds 37 seeds (7 without a DOI, 10 with an `s2_id`) and 175 known records
-(62 from Rayyan full-text screening, 113 from a manual first snowball pass).
+`data/round1` holds 37 seeds (7 without a DOI, 10 with an `s2_id`), 175 known records
+(62 from Rayyan full-text screening, 113 from a manual first snowball pass), the 37 Rayyan
+full-text includes for `--check` (`included.csv`) and the keyword terms (`keywords.toml`).
 
 ## Output
 
@@ -52,6 +53,27 @@ newly included papers as seeds.
 - `seed_resolution.csv`: how each seed was found. Check NOT FOUND, FAILED and title-match.
 - `prisma_counts.json`: run date and PRISMA counts.
 - `run_log.txt`: every request and status code, keys redacted.
+
+## Keyword screening
+
+Cuts the `to_screen` rows of `candidates.csv` down to the ones worth reading.
+
+```bash
+uv run slr-screen --candidates round1/candidates.csv --terms data/round1/keywords.toml \
+  --out round1 --sample 35 --seed 1
+```
+
+- A record is a hit if its title or abstract has a `[topic]` term and a `[context]` term.
+- `metastab*` matches word starts, terms without `*` match whole words. Case and hyphens
+  don't matter.
+- No abstract: `manual (no abstract)`. Screen these on title.
+- `--sample 35 --seed 1` marks 35 excluded records in `sampled`. Screen these too, to see
+  what the filter lost.
+- `--check data/round1/included.csv` (`title`, `abstract`) lists known includes that aren't hits.
+
+Outputs `keyword_screen.csv` (hits, manual, excluded, with `matched_terms` and an empty
+`your_decision`) and `keyword_counts.json` for the PRISMA "excluded by automation tools"
+box. The terms file is frozen before screening and cited in the methods.
 
 ## Sources and merging
 

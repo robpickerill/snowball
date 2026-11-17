@@ -97,7 +97,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.s2 != S2_OFF:
         sources.append(f"Semantic Scholar (backward, forward; mode={args.s2})")
     run_info = {
-        "run_date": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+        "run_date": dt.datetime.now(dt.UTC).strftime("%Y-%m-%d %H:%M UTC"),
         "tool_version": __version__,
         "sources": sources,
         "date_window": [args.year_min, args.date_max],
