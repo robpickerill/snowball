@@ -1,5 +1,5 @@
 {
-  "run_date": "2026-11-16 13:02 UTC",
+  "run_date": "2026-11-17 10:54 UTC",
   "tool_version": "1.0.0",
   "sources": [
     "OpenAlex (backward, forward)",
@@ -12,20 +12,20 @@
   ],
   "seeds": 37,
   "seeds_found_openalex": 31,
-  "seeds_found_semantic_scholar": 12,
+  "seeds_found_semantic_scholar": 11,
   "raw_links": {
     "crossref_backward": 499,
     "crossref_refs_without_doi": 585,
-    "openalex_backward": 698,
-    "openalex_forward": 353,
+    "openalex_backward": 775,
+    "openalex_forward": 459,
     "s2_backward": 0,
-    "s2_forward": 193
+    "s2_forward": 192
   },
-  "seeds_dropped_from_candidates": 18,
-  "unique_candidates": 1094,
+  "seeds_dropped_from_candidates": 19,
+  "unique_candidates": 1242,
   "already_screened": 94,
-  "outside_date_window": 418,
-  "to_screen": 582,
+  "outside_date_window": 454,
+  "to_screen": 694,
   "possible_duplicates_flagged": 14,
   "seeds_with_failed_lookups": []
 }

@@ -2,7 +2,7 @@ from slr_snowball.http import RetriesExhausted
 from slr_snowball.models import DateWindow, KnownRecords, Seed, Work
 from slr_snowball.pipeline import Snowballer
 
-from conftest import SEEDS, FakeSource, paper
+from conftest import SEEDS, FakeOpenAlex, FakeSource, paper
 
 
 def by_title(result):
@@ -114,3 +114,11 @@ def test_rate_limited_semantic_scholar_is_logged(openalex, s2, caplog):
     s2.find = refuse
     Snowballer(openalex, semantic_scholar=s2).run(SEEDS)
     assert any(r.levelname == "WARNING" and "seed 3" in r.getMessage() for r in caplog.records)
+
+
+def test_abstract_is_one_line():
+    seed = paper("S", "Seed")
+    cited = paper("C", "Cited", abstract="Scribe ingests > 15\n TB/s\r\n\tper day.")
+    source = FakeOpenAlex([seed, cited], references={"Seed": ["Cited"]})
+    row = by_title(Snowballer(source, s2_mode="off").run([Seed("1", "Seed")]))["Cited"]
+    assert row["abstract"] == "Scribe ingests > 15 TB/s per day."

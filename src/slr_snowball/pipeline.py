@@ -203,5 +203,5 @@ class Snowballer:
             "in_date_window": in_window,
             "to_screen": in_window and not already,
             "possible_duplicate_of": ";".join(flags.get(work.record_id, [])),
-            "abstract": work.abstract[:3000],
+            "abstract": " ".join(work.abstract.split())[:3000],
         }
